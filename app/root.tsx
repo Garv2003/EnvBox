@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import { Toaster } from "@/components/ui/toaster"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,8 +34,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="relative min-h-[100vh] bg-black bg-gradient-to-tr from-zinc-900/50 to-zinc-700/30">
         {children}
+        <Toaster />
         <ScrollRestoration />
         <Scripts />
       </body>
